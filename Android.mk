@@ -424,10 +424,10 @@ LOCAL_REQUIRED_MODULES := \
 # * We will never add them if PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD = false.
 # * We will always add them if PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD = true.
 # * Otherwise, we will add them by default to eng builds.
-art_target_include_debug_build := $(PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD)
+art_target_include_debug_build := false
 ifneq (false,$(art_target_include_debug_build))
 ifneq (,$(filter eng,$(TARGET_BUILD_VARIANT)))
-  art_target_include_debug_build := true
+  art_target_include_debug_build := false
 endif
 ifeq (true,$(art_target_include_debug_build))
 LOCAL_REQUIRED_MODULES += \
